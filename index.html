@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Bulb</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 20px;
+            background-color:white;
+        }
+        .btn:hover{
+            border:6px solid black;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <h1 id="heading"style="color:white ;">Press the button to make the bulb glow</h1>
+    <img id="bulb" src="images/bulb-off.jpg" alt="" class="center">
+    <button id="toggleBtn" class="center btn">TURN ON</button>
+
+    <script>
+        let btn = document.getElementById('toggleBtn')
+        let bulb = document.getElementById('bulb')
+        let heading=document.getElementById('heading')
+        btn.addEventListener('click', toggleBulb)
+        function toggleBulb(e){
+            if(btn.textContent.includes('ON')){
+                bulb.src = "images/bulb-on.jpg"  
+                btn.textContent ="TURN OFF"  
+                heading.textContent="Press the button to switch off the bulb "
+                
+            }else{
+                bulb.src = "images/bulb-off.jpg"  
+                btn.textContent ="TURN ON"  
+                heading.textContent ="Press the button to make the bulb glow";
+            }
+        }
+    </script>
+</body>
+
+</html>
